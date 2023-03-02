@@ -2,6 +2,7 @@
 
 largura = float(input('Informe a largura: '))
 altura = float(input('Informe a altura: '))
-tintas = (largura * altura) / 2
+area = largura * altura
+tintas = area / 2
 
-print('Para pintar sua parede serão necessários {:.0f} lata(s) de tinta'.format(tintas))
+print('A área total do seu ambiente é de {:.2f} m². \nPara pintar sua parede serão necessários {:.0f}l de tinta.'.format(area, tintas))
