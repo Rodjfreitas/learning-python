@@ -19,7 +19,7 @@ while identificacao.isalnum() == True:
     identificacao = input('Digite novamente: ')
 
 # Questiona se possui vale transporte
-optvt = int(input('Optante de Vale Transporte?\n[1] - Sim \n[2] - Não\n: '))
+optvt = int(input('\nOptante de Vale Transporte?\n[1] - Sim \n[2] - Não\n: '))
 
 # Essa instrução não permite que seja selecionado um valor diferente de 1 ou 2 na opção vale transporte
 while optvt > 2 or optvt < 1:
@@ -33,15 +33,15 @@ else:
     aliqvt = 0
 
 #Usuário seleciona se possui Vale alimentação
-optva = int(input('Optante por Vale Alimentação ou Refeição?\n[1] - Sim\n[2] - Não\n: '))
+optva = int(input('\nPossui Vale Alimentação ou Refeição?\n[1] - Sim\n[2] - Não\n: '))
 
 # Não permite digitar opção diferente das selecionadas:
 while optva > 2 or optva < 1:
-    print('Opção inválida')
+    print('\nOpção inválida')
     optva = int(input('\nPossui Vale Alimentação ou Refeição?\n[1] - Sim\n[2] - Não\n: '))
 
 if optva == 1:
-    va = float(input('Informe o Valor mensal do VA/VR: '))
+    va = float(input('\nInforme o Valor mensal do VA/VR: '))
     valorVA = va * 0.2    
 
 # Pede ao usuário que informe o salário
@@ -51,7 +51,7 @@ salario = float(input('\nInforme seu salário Bruto: '))
 valordaHora = salario / 220
 
 #Pergunta sobre existência de Hora Extras
-opthe = int(input('Realizou Hora Extra?\n[1] - Sim\n[2] - Não\n: '))
+opthe = int(input('\nRealizou Hora Extra?\n[1] - Sim\n[2] - Não\n: '))
 
 # Não permite digitar opção diferente das selecionadas:
 while opthe <  1 or opthe > 2:
@@ -59,13 +59,13 @@ while opthe <  1 or opthe > 2:
     opthe = int(input('\nRealizou Hora Extra?\n[1] - Sim\n[2] - Não\n: '))
 
 if opthe == 1:
-    qtdhoras = float(input('Quantas horas foram realizadas? '))
+    qtdhoras = float(input('\nQuantas horas foram realizadas? '))
     valorHE = (valordaHora * 1.5) * qtdhoras
 
 salarioTotal = salario + valorHE
 
 # FGTS
-optfgts = int(input('Informe o tipo de contrato:\n[1] - CLT Convencional\n[2] - Contrato de Aprendizagem\n[3] - Trabalhador doméstico\n: '))
+optfgts = int(input('\nInforme o tipo de contrato:\n[1] - CLT Convencional\n[2] - Contrato de Aprendizagem\n[3] - Trabalhador doméstico\n: '))
 
 while optfgts < 1 or optfgts > 3:
     print('\nOpção Inválida')
@@ -155,8 +155,10 @@ print('Total de Descontos em Folha: R$ {:.2f}'.format(somadeducoes - fgts))
 print('\n{:=^30}'.format('Líquido'))
 print('\nSalário Líquido: R$ {:.2f}\n'.format(saliquido))
 print('\n{:=^30}\n'.format('Observações')) # cabeçalho deduções
-print('\n> O FGTS é uma obrigação do empregador, dessa forma não incide desconto sobre a folha de pagamento.')
+print('> O FGTS é uma obrigação do empregador, dessa forma não incide desconto sobre a folha de pagamento.\n')
 if valorHE != 0:
-    print('> A hora extra foi calculada mediante adicional de 50%')
+    print('> A hora extra foi calculada mediante adicional de 50%.\n')
     if vt != 0:
-        print('> O desconto de VT não leva em consideração valor recebido por hora extra')
+        print('> O desconto de VT não leva em consideração valor recebido por hora extra.\n')
+if valorVA != 0:
+    print('> A dedução do VA/VR equivale à 20% do valor depositado.\n')
