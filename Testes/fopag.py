@@ -136,13 +136,14 @@ while i < len(deducoes):
 saliquido = salarioTotal - (somadeducoes - fgts)
 
 #Impressão de Resultados em tela
-print('\n{:=^40}'.format('Folha de Pagamento')) # cabeçalho folha de pagamento
+print('\n\n\n\n{:=^40}'.format('Folha de Pagamento')) # cabeçalho folha de pagamento
 
 print('\nColaborador: {}'.format(identificacao)) # nome do colaborador
-print('\n{:=^30}'.format('Receitas')) # cabeçalho deduções
+print('\n{:.^30}'.format('Receitas')) # cabeçalho deduções
 print('\nSalário Bruto: R$ {:.2f}'.format(salario)) # salário bruto
-print('Hora Extra Recebida: R$ {:.2f}'.format(valorHE))
-print('\n{:=^30}\n'.format('Deduções')) # cabeçalho deduções
+if valorHE != 0:
+    print('Hora Extra Recebida: R$ {:.2f}'.format(valorHE))
+print('\n{:.^30}\n'.format('Deduções')) # cabeçalho deduções
 print('FGTS ({:.1f}%): R$ {:.2f}'.format((aliqfgts * 100), fgts))
 if inss != 0:
     print('INSS ({:.1f}%): R$ {:.2f}'.format((aliqinss * 100), inss))
@@ -153,12 +154,12 @@ if vt != 0:
 if valorVA != 0:
     print('Vale Alimentação/Refeição: R$ {:.2f}'.format(valorVA))
 print('\nTotal de Deduções: R$ {:.2f}'.format(somadeducoes))
-print('\n{:=^30}\n'.format('Resumo')) 
+print('\n{:.^30}\n'.format('Resumo')) 
 print('Total de Receitas: R$ {:.2f}'.format(salarioTotal))
 print('Total de Descontos: R$ {:.2f}'.format(somadeducoes - fgts))
-print('\n{:=^30}'.format('Líquido'))
+print('\n{:.^30}'.format('Líquido'))
 print('\nSalário Líquido: R$ {:.2f}\n'.format(saliquido))
-print('\n{:=^30}\n'.format('Observações')) # cabeçalho deduções
+print('\n{:.^30}\n'.format('Observações')) # cabeçalho deduções
 print('> O FGTS é uma obrigação do empregador, dessa forma não incide desconto sobre a folha de pagamento.\n')
 if valorHE != 0:
     print('> A hora extra foi calculada mediante adicional de 50%.\n')
