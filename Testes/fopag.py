@@ -139,19 +139,23 @@ saliquido = salarioTotal - (somadeducoes - fgts)
 print('\n{:=^40}'.format('Folha de Pagamento')) # cabeçalho folha de pagamento
 
 print('\nColaborador: {}'.format(identificacao)) # nome do colaborador
-print('\n{:=^30}\n'.format('Receitas')) # cabeçalho deduções
+print('\n{:=^30}'.format('Receitas')) # cabeçalho deduções
 print('\nSalário Bruto: R$ {:.2f}'.format(salario)) # salário bruto
-print('\nHora Extra Recebida: R$ {:.2f}'.format(valorHE))
+print('Hora Extra Recebida: R$ {:.2f}'.format(valorHE))
 print('\n{:=^30}\n'.format('Deduções')) # cabeçalho deduções
-print('FGTS: R$ {:.2f} - Alíquota: {:.1f} %'.format(fgts, (aliqfgts * 100)))
-print('INSS: R$ {:.2f} - Alíquota máxima {:.1f} %'.format(inss, (aliqinss * 100)))
-print('IRRF: R$ {:.2f} - Alíquota: {:.1f} %'.format(irrf, (aliqirrf * 100)))
+print('FGTS ({:.1f}%): R$ {:.2f}'.format((aliqfgts * 100), fgts))
+if inss != 0:
+    print('INSS ({:.1f}%): R$ {:.2f}'.format((aliqinss * 100), inss))
+if irrf != 0:
+    print('IRRF ({:.1f}%): R$ {:.2f}'.format((aliqirrf * 100), irrf))
 if vt != 0:
     print('Vale Transporte: R$ {:.2f}'.format(vt))
 if valorVA != 0:
     print('Vale Alimentação/Refeição: R$ {:.2f}'.format(valorVA))
 print('\nTotal de Deduções: R$ {:.2f}'.format(somadeducoes))
-print('Total de Descontos em Folha: R$ {:.2f}'.format(somadeducoes - fgts))
+print('\n{:=^30}\n'.format('Resumo')) 
+print('Total de Receitas: R$ {:.2f}'.format(salarioTotal))
+print('Total de Descontos: R$ {:.2f}'.format(somadeducoes - fgts))
 print('\n{:=^30}'.format('Líquido'))
 print('\nSalário Líquido: R$ {:.2f}\n'.format(saliquido))
 print('\n{:=^30}\n'.format('Observações')) # cabeçalho deduções
@@ -162,3 +166,5 @@ if valorHE != 0:
         print('> O desconto de VT não leva em consideração valor recebido por hora extra.\n')
 if valorVA != 0:
     print('> A dedução do VA/VR equivale à 20% do valor depositado.\n')
+if inss != 0:
+    print('> A alíquota descrita acima do INSS é a máxima praticada para a remuneração informada.\n')
