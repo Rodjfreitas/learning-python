@@ -38,3 +38,11 @@ else:
     while i < qtdalunos:
         print('{}° aluno: {}'.format((i+1), sorteioAlunos[i] ))
         i += 1
+
+    print('\nOrdem Alfabética:\n')
+    # ordem alfabética
+    ordem = sorted(listaAlunos)
+    i = 0
+    while i < len(ordem):
+        print('{}): {}'.format(i + 1, ordem[i]))
+        i += 1
