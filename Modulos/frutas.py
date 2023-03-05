@@ -1,4 +1,3 @@
-import random
 itens = []
 
 nomeitens = input('\nQuais dados você quer tratar? ')
