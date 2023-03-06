@@ -1,4 +1,6 @@
-cadastro = []
+import openpyxl
+cadastro = [['nome', 'cidade', 'nascimento']]
+
 
 pergunta = int(input('Você quer adicionar um cadastro?\n[1] - Sim\n[2] - Não\n'))
 if pergunta < 1 or pergunta > 2:
@@ -8,14 +10,14 @@ qtd = int(input('Quantos Cadastros? '))
 i = 0
 if pergunta == 1:
     while i < qtd:
-        nome = str(input('\nDigite o nome: '))
-        cidade = str(input('Digite a cidade: '))
-        nascimento = int(input('Digite o ano de nascimento: '))
+        nome = str(input('\nDigite o nome: ')).strip()
+        cidade = str(input('Digite a cidade: ')).strip()
+        nascimento = int(input('Digite o ano de nascimento: '))       
 
         cadastro.append([nome, cidade, nascimento])
         i += 1
 
-i = 0
+i = 1
 while i < len(cadastro):
     print('\nNome: {} / Cidade: {} / Nascimentos: {}'.format(cadastro[i][0], cadastro[i][1], cadastro[i][2]))
     i += 1
@@ -34,8 +36,18 @@ i = 0
 if pergunta2 == 1:
     if pesquisa == 2:
         tipoPesq = int(tipoPesq)
-    while i < len(cadastro):        
-        if cadastro[i][pesquisa] == tipoPesq:
+    while i < len(cadastro):
+        if tipoPesq in cadastro[i][pesquisa]:      
+        #if cadastro[i][pesquisa] == tipoPesq:
             print(cadastro[i])
         i += 1
 
+arquivo = openpyxl.Workbook()
+planilha = arquivo.active
+
+
+
+for linha in cadastro:
+    planilha.append(linha)
+
+arquivo.save('cadastroDados.xlsx')
