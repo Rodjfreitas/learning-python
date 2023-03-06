@@ -24,14 +24,16 @@ while i < len(cadastro):
 pergunta2 = int(input('\nGostaria de Realizar alguma pesquisa?\n[1] - Sim\n[2] - Não '))
 
 if pergunta2 < 1 or pergunta2 > 2:
-    pergunta2 = int(input('\nInválido!\nGostaria de Realizar alguma pesquisa?\n[1] - Sim\n[2] - Não '))
+    pergunta2 = int(input('\nInválido!\nGostaria de Realizar alguma pesquisa?\n[1] - Sim\n[2] - Não \n'))
 
-pesquisa = int(input('\nPesquisar por:\n[0] - Nome\n[1] - Cidade\n[2] - Nascimento'))
+pesquisa = int(input('\nPesquisar por:\n[0] - Nome\n[1] - Cidade\n[2] - Nascimento\n'))
 if pesquisa < 0 or pesquisa > 2:
     pesquisa = int(input('\nInválido!\nPesquisar por:\n[0] - Nome\n[1] - Cidade\n[2] - Nascimento\n'))
-tipoPesq = input('\nDigite a Palavra chave: ')
+tipoPesq = input('\nDigite a Palavra chave: \n')
 i = 0
 if pergunta2 == 1:
+    if pesquisa == 2:
+        tipoPesq = int(tipoPesq)
     while i < len(cadastro):        
         if cadastro[i][pesquisa] == tipoPesq:
             print(cadastro[i])
