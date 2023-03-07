@@ -18,6 +18,7 @@ elif digitos == 2:
 else:
     lista = ['unidade']
 
+
 i = 0
 # loop para insersão de numeros de acordo com a quantidade de dígitos informados
 while i < digitos:
