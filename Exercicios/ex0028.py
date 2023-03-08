@@ -13,7 +13,7 @@ while chute.isnumeric() == False or int(chute) < 1 or int(chute) > 9:
 
 chute = int(chute)
 if chute == sorteado:
-    print('\nUauuuu, Parabéns!!! Você acertou na Mosca!')
+    print('\nUauuuu, Parabéns!!! Você acertou na Mosca! Você Venceu!')
 else:
-    print('\nÓ Nãoooo! você Errou!!!!')
+    print('\nÓ Nãoooo! você Errou!!!! O computador Venceu!')
 print('\nO número sorteado foi {}\n'.format(sorteado))
