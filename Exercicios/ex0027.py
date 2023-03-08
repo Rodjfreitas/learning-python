@@ -1,6 +1,6 @@
 # Faça um programa que leia o nome completo de uma pessoa, mostrando em seguida o primeiro e o último nome separadamente.
 
-nome = str(input('\nDigite seu nome completo: '))
+nome = str(input('\nDigite seu nome completo: ')).strip().title()
 nomeSeparado = nome.split()
 qtdespacos = len(nomeSeparado) - 1
 
