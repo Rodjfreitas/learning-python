@@ -1,4 +1,4 @@
 #Crie um programa que escreva "Olá Mundo" na tela
 
-msg = "Olá mundo"
+msg = "\033[1;37;42mOlá mundo\033[m"
 print(msg)
