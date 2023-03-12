@@ -8,7 +8,7 @@ for c in range(1, 7):
         nascimento = int(
             input('\nInválido.\nDigite o ano de nascimento da {}° pessoa: '.format(c)))
     idade = 2023 - nascimento
-    if idade < 18:
+    if idade < 21:
         menores += 1
     else:
         maiores += 1
