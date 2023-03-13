@@ -8,9 +8,8 @@ for c in juntar:
     novapalavra += c
 
 if novapalavra == novapalavra[::-1]:
-    print('A palavra é Palíndromo.')
+    print('\nA palavra é Palíndromo.')
 else:
-    print('Não é palíndromo')
-
-print(novapalavra[::-1])   
-print(novapalavra)
+    print('\nNão é palíndromo')
+print('\na palavra normal é: {}\n'.format(novapalavra))
+print('\na palavra invertida é: {}\n'.format(novapalavra[::-1]))
