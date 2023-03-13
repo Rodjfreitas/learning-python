@@ -14,12 +14,28 @@ for c in range(0, 4):
         sexo = input(
             '\nInválido. Qual sexo:\n[1] - Masculino\n[2] - Feminino\n')
     if int(sexo) == 1:
-        sexo = 'Masculino'
+        sexo = 'M'
     else:
-        sexo = 'Feminino'
+        sexo = 'F'
     cadastro.append([nome, nascimento, idade, sexo])
 
 print('{:30} {:10} {:5} {:10}'.format('Nome', 'Nascimento', 'Idade', 'Sexo'))
 for c in range(0, 4):    
     print('{:30} {:10} {:5} {:10}'.format(
         cadastro[c][0], cadastro[c][1], cadastro[c][2], cadastro[c][3]))
+
+somaidade = 0
+mediaidade = 0
+homens = 0
+mulheres = 0
+
+for c in range(0, len(cadastro)):
+    if cadastro[c][3] == 'M':
+        homens += 1
+    else:
+        mulheres += 1
+    somaidade += cadastro[c][2]
+
+mediaidade = somaidade / len(cadastro)
+print('\nA relação possui {} mulheres e {} homens.'.format(mulheres, homens))
+print('\nA média de idade de todos é de {:.0f} anos\n'.format(mediaidade))
