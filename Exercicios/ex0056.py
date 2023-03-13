@@ -1,6 +1,7 @@
 # desenvolva um programa que leia o nome, idade e sexo de 4 pessoas. No final do programa, mostre.
 cadastro = []
-for c in range(0, 4):
+for c in range(0, 4): 
+    print('\n{:=^20}{}{}{:=^20}'.format('=', 'Cadastro n°', c + 1, '='))   
     nome = input('\nDigite o nome: ').strip().title()
     while nome.isnumeric == True or nome.count(" ") < 1:
         nome = input('\nInválido. Digite o nome completo: ').strip().title()
@@ -18,6 +19,7 @@ for c in range(0, 4):
         sexo = 'Feminino'
     cadastro.append([nome, nascimento, idade, sexo])
 
-for c in range(0, 4):
-    print('Nome: {} | Nascimento: {} | Idade: {} | Sexo: {}'.format(
+print('{:30} {:10} {:5} {:10}'.format('Nome', 'Nascimento', 'Idade', 'Sexo'))
+for c in range(0, 4):    
+    print('{:30} {:10} {:5} {:10}'.format(
         cadastro[c][0], cadastro[c][1], cadastro[c][2], cadastro[c][3]))
