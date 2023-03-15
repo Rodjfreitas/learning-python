@@ -1,10 +1,11 @@
+from random import randint
 # Crie um programa que leia vários números inteiros pelo teclado. No final da execução, mostre a média entre todos os valores e qual foi o maior e o menor valores lidos. O programa deve perguntar ao usuário se ele quer ou não continuar a digitar valores.
 ordem = 0
 maior = 0
 menor = 0
 quantidade = 0
 soma = 0
-vezes = 10
+vezes = randint(1, 20)
 i = 0
 print('\n{:=^40}'.format('Numeros Iniciais'))
 while i < vezes:
@@ -23,7 +24,7 @@ while i < vezes:
     if i == vezes - 1:
         opt = int(input('\nDeseja continuar inserindo números:\n[1] - Sim\n[2] - Não\n'))
         if opt == 1:
-            vezes += 5
+            vezes += randint(1, 20)
             print('\n{:=^40}'.format('Adicionando'))
         else:
             break        
