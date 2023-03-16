@@ -2,6 +2,7 @@ import pandas as pd
 from docx import Document
 from docx.shared import Inches
 
+contagem = 1
 confirmacao = input('Deseja iniciar:\n[1] - Sim\n[2] - Sair\n')
 
 if int(confirmacao) == 1:
@@ -24,7 +25,8 @@ if int(confirmacao) == 1:
             table.cell(i + 1, j).text = str(df.values[i, j])
 
     # salva o arquivo do word
-    document.save('arquivo_word.docx')
-    print('{:=^50}'.format('Arquivo Gerada'))
+    document.save('{}{}{}'.format('arquivo_word_', contagem, '.docx'))
+    contagem += 1
+    print('{:=^50}'.format('Arquivo Gerado'))
 else:
     print('{:=^50}'.format('Fim, Nada foi Executado.'))
