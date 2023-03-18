@@ -5,7 +5,7 @@ while True:
     while numero.isnumeric() == False or int(numero) < 0 or int(numero) > 20:
        numero = input('Inválido. digite um número de 1 à 20: ')
     numero = int(numero)
-    print(f'O número escolhido foi {extenso[numero]}')
+    print(f'\nVocê digitou o número {extenso[numero]}')
     repetir = input('\nRepetir\n[1] - Sim\n[2] - Não\n')
     while repetir not in ['1', '2']:
         repetir = input('\nRepetir\n[1] - Sim\n[2] - Não\n')
