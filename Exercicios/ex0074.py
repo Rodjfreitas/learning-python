@@ -4,15 +4,15 @@ numeros = (randint(0, 50), randint(0, 50), randint(
     0, 50), randint(0, 50), randint(0, 50))
 maior = 0
 menor = 0
-for numero in range(0, len(numeros)):
-    if numero == 0:
-        maior = numeros[numero]
-        menor = numeros[numero]
+for pos, numero in enumerate (numeros):
+    if pos == 0:
+        maior = numero
+        menor = numero
     else:
-        if numeros[numero] > maior:
-            maior = numeros[numero]
-        if numeros[numero] < menor:
-            menor = numeros[numero]
+        if numero > maior:
+            maior = numero
+        if numero < menor:
+            menor = numero
 
-print(f'\nOs números da sorteados foram: {numeros}')
+print(f'\nOs números sorteados foram: {numeros}')
 print(f'O maior número é {maior} e o menor número é {menor}')
