@@ -2,5 +2,11 @@
 valores = []
 for numero in range(0, 5):
     valores.append(int(input(f'Digite {numero + 1}° valor: ')))
-print(f'O maior valor é {max(valores)} e seu índice é {valores.index(max(valores))}')
-print(f'O menor valor é {min(valores)} e seu índice é {valores.index(min(valores))}')
+print(f'O maior valor é {max(valores)} nas posições ', end='')
+for pos, numero in enumerate (valores):
+    if numero == max(valores):
+        print(f'...{pos}', end='')
+print(f'\nO menor valor é {min(valores)} nas posições ', end='')
+for pos, numero in enumerate (valores):
+    if numero == min(valores):
+        print(f'...{pos}', end='')
