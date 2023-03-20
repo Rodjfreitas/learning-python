@@ -6,5 +6,4 @@ for i in range(0, 5):
         valores.append(valor)
 valores.sort()
 print(f'Os valores únicos são: {valores}')
-
     
