@@ -7,7 +7,7 @@ for c in range(0, 3):
     for valor in range(0, 3):
         numeros[c].append(int(input(f'Digite o valor de [{c}, {valor}]: ')))
 for lista in numeros:
-    print(f'[ {lista[0]} ] [ {lista[1]} ] [ {lista[2]} ]')
+    print(f'[  {lista[0]}  ] [  {lista[1]}  ] [  {lista[2]}  ]')
 
 for lista in numeros:
     for valor in lista:
