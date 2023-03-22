@@ -1,7 +1,7 @@
 # Crie um programa que leia nome e duas notas de vários alunos e guarde tudo em uma lista composta. No final, mostre um boletim contendo média de cada um e permita que o usuário possa mostrar as notas de cada aluno individualmente.
-cadastroCompleto = list()
-cadastro = list()
-notas = list()
+cadastroCompleto = []
+cadastro = []
+notas = []
 while True:
     cadastro.append(str(input('Nome: ')).strip().title())
     notas.append(int(input('Nota 1) ')))
