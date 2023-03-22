@@ -1,7 +1,9 @@
 # Faça um programa que leia nome e peso de várias pessoas, guardando tudo em uma lista. No final mostre:
 # a)quantas pessoas foram cadastradas, b) uma listagem com as pessoas mais pesadas, c) uma listagem com as pessoas mais leves
-cadastro = list()
-info = list()
+cadastro = []
+info = []
+maxPeso = 0
+minPeso = maxPeso
 while True:
     info.append(str(input('Nome:')))
     info.append(float(input('Peso: ')))
@@ -13,7 +15,6 @@ while True:
     if continuar == 'N':
         break
 print(f'\nForam cadastradas {len(cadastro)} pessoas.')
-maxPeso = 0
 for c in cadastro:
     if c[1] > maxPeso:
         maxPeso = c[1]
@@ -21,7 +22,6 @@ print(f'O maior peso é {maxPeso} Kg. ', end='')
 for pessoa in cadastro:
     if pessoa[1] == maxPeso:
         print(f'{pessoa[0]}, ', end='')
-minPeso = maxPeso
 for c in cadastro:
     if c[1] < minPeso:
         minPeso = c[1]

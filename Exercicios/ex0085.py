@@ -8,6 +8,12 @@ for c in range(0, 7):
         numeros[1].append(valor)
 numeros[0].sort()
 numeros[1].sort()
-print(f'Pares: {numeros[0]}')
-print(f'Ímpares: {numeros[1]}')
-print(numeros)
+print('-=' * 30)
+if len(numeros[0]) != 0:
+    print(f'Pares: {numeros[0]}')
+else:
+    print('Não foram digitados números pares.')
+if len(numeros[1]) != 0:
+    print(f'Ímpares: {numeros[1]}')
+else:
+    print('Não foram digitados números ímpares')
