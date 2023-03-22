@@ -5,4 +5,4 @@ for c in range(0, 3):
         matriz[c].append(int(input(f'Digite um número para [{c}, {valor}]: ')))
 print(f'\n{"MATRIZ 3X3":=^50}\n')
 for lista in matriz:
-    print(f'[ {lista[0]} ] [ {lista[1]} ] [ {lista[2]} ]')
+    print(f'[{lista[0]:>4} ] [{lista[1]:>4} ] [{lista[2]:>4} ]')
