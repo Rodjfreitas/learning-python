@@ -6,6 +6,7 @@ while True:
     cadastro.append(str(input('Nome: ')).strip().title())
     notas.append(int(input('Nota 1) ')))
     notas.append(int(input('Nota 2) ')))
+    cadastro.append((notas[0] + notas[1]) / 2)
     cadastro.append(notas[:])
     cadastroCompleto.append(cadastro[:])
     notas.clear()
@@ -19,7 +20,7 @@ print(f'\n{"No.":<3} {"NOME":<20} {"MÉDIA":>10}')
 print(f'{"=":=^35}\n')
 for valor in cadastroCompleto:
     print(
-        f'{cadastroCompleto.index(valor):>3} {valor[0]:<20} {(valor[1][0] + valor[1][1]) / 2:>10}')
+        f'{cadastroCompleto.index(valor):>3} {valor[0]:<20} {valor[1]}')
 print(f'\n{"=":=^35}\n')
 print(cadastroCompleto)
 while True:
@@ -33,4 +34,4 @@ while True:
         break
 
     print(
-        f'Notas de {cadastroCompleto[aluno][0]} são: {cadastroCompleto[aluno][1]}')
+        f'Notas de {cadastroCompleto[aluno][0]} são: {cadastroCompleto[aluno][2]}')
