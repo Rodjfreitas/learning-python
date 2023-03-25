@@ -40,17 +40,22 @@ print("\n")
 print("=-" * 15, end='')
 print("Cadastro", end='')
 print("=-" * 15)
+
 # Quantidade de Pessoas Cadastradas
 if len(cadastro) == 1:
     print(f'Foi cadastrada {len(cadastro)} pessoa.')
+    # Média de Idade
+    print(f'A média de idade é de {cadastro[0]["idade"]} anos.')
+    print("\n")
 else:
     print(f'Foram cadastradas {len(cadastro)} pessoas.')
-# Média de Idade
-for pos, v in enumerate(cadastro):
-    media += v['idade']
-media = media / len(cadastro)
-print(f'A média de idade das pessoas cadastradas é de {media:.0f} anos.')
-print("\n")
+    # Média de Idade
+    for pos, v in enumerate(cadastro):
+        media += v['idade']
+    media = media / len(cadastro)
+    print(f'A média de idade das pessoas cadastradas é de {media:.0f} anos.')
+    print("\n")
+
 # Cria uma lista de cadastro ordenando os dicionários pela ordem alfabética do nome
 cadastroOrdenado = sorted(cadastro, key=lambda dados: dados['nome'])
 print("=-" * 10, end='')
@@ -61,11 +66,14 @@ for pos, v in enumerate(cadastroOrdenado):
     if v['sexo'] == 'F':
         print(f'{v["nome"]}')
 print("\n")
-print("=-" * 10, end='')
+
+
 # Quem são as pessoas que possuem idade acima da média
-print("Idade Acima da Média", end='')
-print("=-" * 10)
-for pos, v in enumerate(cadastroOrdenado):
-    if v['idade'] > media:
-        print(f'{v["nome"]}: {v["idade"]} anos, sexo:{v["sexo"]}')
-print("\n")
+if len(cadastro) > 1:
+    print("=-" * 10, end='')
+    print("Idade Acima da Média", end='')
+    print("=-" * 10)
+    for pos, v in enumerate(cadastroOrdenado):
+        if v['idade'] > media:
+            print(f'{v["nome"]}: {v["idade"]} anos, sexo:{v["sexo"]}')
+    print("\n")
