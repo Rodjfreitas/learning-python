@@ -17,7 +17,7 @@ if ctps != 0:
     cadastro['contratação'] = int(input('Ano de contratação: '))
     while cadastro['contratação'] < 1900 or cadastro['contratação'] > date.today().year:
         cadastro['contratação'] = int(input('Inválido. Ano de contratação: '))
-    cadastro['salario'] = float(input('Salário: '))
+    cadastro['salario'] = float(input('Salário:R$ '))
     cadastro['aposentadoria'] = cadastro['idade'] + \
         (35 - (date.today().year - cadastro['contratação']))
 else:
