@@ -11,3 +11,6 @@ else:
 
 for k, v in situacao.items():
     print(f'{k} é igual à {v}')
+
+
+
