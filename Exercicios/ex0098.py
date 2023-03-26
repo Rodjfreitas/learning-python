@@ -5,6 +5,7 @@ from time import sleep
 def contador():
     for i in range(0, 3):
         print("=-" * 20)
+        # Verifica as etapas para atribuir os valores de inicio, fim e passo
         if i == 0:
             inicio = 1
             fim = 10
@@ -18,14 +19,17 @@ def contador():
             inicio = int(input('Inicio: '))
             fim = int(input('Fim: '))
             passo = int(input('Passo: '))
+        # Verifica se o valor de passo é negativo ou igual a zero
         if passo < 0:
             passo = passo * -1
         elif passo == 0:
             passo = 1
+        # Cabeçalho    
         print('Analisando números')
         print("=-" * 20)
         print(f'Contagem de {inicio} à {fim} - de {passo} em {passo}')
         sleep(2.5)
+        # Inicio do loop de acordo com os dados informados
         if inicio < fim:
             while inicio <= fim:
                 print(f'{inicio} ', flush=True, end='')
