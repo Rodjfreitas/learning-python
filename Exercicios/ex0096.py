@@ -12,8 +12,8 @@ def titulo(msg):
 
 while True:
     titulo('Controle de Terrenos')
-    largura = float(input('Informe a largura do terreno: '))
-    comprimento = float(input('Informe o comprimento do terreno: '))
+    largura = float(input('Informe a largura do terreno(m): '))
+    comprimento = float(input('Informe o comprimento do terreno(m): '))
     area(largura, comprimento)
     while True:
         continuar = input('\nNovo calculo? [S/N]').upper()[0]
