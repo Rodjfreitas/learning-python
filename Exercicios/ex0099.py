@@ -8,7 +8,7 @@ def maior(* numeros):
     print('Analisando os valores passados....')
     for num in numeros:
         print(f'{num} ', flush=True, end='')
-        sleep(1)
+        sleep(0.4)
     print(f'foram informados {len(numeros)} valores ao todo')
     print(f'O maior valor informado foi {max(numeros)}')
     print("-=" * 40)
