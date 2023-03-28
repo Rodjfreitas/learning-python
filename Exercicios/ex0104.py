@@ -6,7 +6,6 @@ def leiaint(msg):
         valor = input(msg)
         if valor.isnumeric() == True:
             return valor
-            break
         print(f'\033[0;31m{"ERRO! Digite um número inteiro válido"}\033[m')
 
 
