@@ -1,16 +1,16 @@
-from datetime import datetime
 # Crie um programa que tenha uma função chamada voto() que vai receber como parâmetro o ano de nascimento de uma pessoa, retornando um valor literal indicando se uma pessoa tem voto Negado, Opcional ou obrigatório nas eleições
 
 
 def voto(nascimento):
+    # se necessária somente dentro da função, use sempre dentro.
+    from datetime import datetime
     idade = datetime.now().year - nascimento
     if idade < 16:
-        s = (f'com {idade} anos: VOTO NEGADO.')
+        return f'com {idade} anos: VOTO NEGADO.'
     elif idade < 18 or idade > 65:
-        s = (f'com {idade} anos: VOTO OPCIONAL.')
+        return f'com {idade} anos: VOTO OPCIONAL.'
     else:
-        s = (f'com {idade} anos: VOTO OBRIGATÓRIO.')
-    return s
+        return f'com {idade} anos: VOTO OBRIGATÓRIO.'
 
 
 while True:
@@ -19,5 +19,4 @@ while True:
         nascimento = int(nascimento)
         break
     print('Inválido.')
-resposta = voto(nascimento)
-print(resposta)
+print(voto(nascimento))
