@@ -1,7 +1,7 @@
 # Faça um programa que tenha uma função notas() que pode receber várias notas de alunos e vai retornar um dicionário com as seguintes informações: a) quantidade de notas b) maior nota c) menor nota d) a média da turma e) a situação (opcional)  Adicione também as docstrings da função
 
 
-def notas(* num):
+def notas(* num, sit=False):
     """
     -> Recebe notas escolares para análise de informações
     :param num: numeros (int ou float). Pode-se inserir um número, ou mais de um número separando-os por vírgulas.
@@ -15,10 +15,17 @@ def notas(* num):
     ficha['menor'] = min(notas)
     ficha['maior'] = max(notas)
     ficha['media'] = sum(notas) / len(notas)
+    if sit:
+        if ficha['media'] > 7:
+            ficha['situação'] = 'BOA'
+        elif ficha['media'] > 5:
+            ficha['situação'] = 'RAZOÁVEL'
+        else:
+            ficha['situação'] = 'RUIM'
     del notas
     return ficha
 
 
 help(notas)
-resp = notas(5.2, 3.7, 8, 7, 9.1, 1)
+resp = notas(5.2, 3.7, 8, 7, 9.1, 1, sit=True)
 print(resp)
