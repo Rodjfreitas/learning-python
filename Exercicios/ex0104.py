@@ -6,9 +6,9 @@ def leiaint(msg):
         valor = input(msg)
         if valor.isnumeric() == True:
             return valor
-        print(f'\033[0;31m{"ERRO! Digite um número inteiro válido"}\033[m')
+        print('\033[0;31mERRO! Digite um número inteiro válido\033[m')
 
 
 # Programa Principal
-n = leiaint('Digite um número: ')
-print(f'Você acabou de digitar o número {n}')
+n = leiaint('Digite um número: \033[1;32m')
+print(f'\033[1;32mVocê acabou de digitar o número {n}\033[m')
