@@ -78,12 +78,15 @@ while True:
         print(error('Inválido: Nome completo por favor.'))
     while True:
         nascimento = input('Ano de Nascimento: ')
-        if len(nascimento) == 4 and nascimento.isnumeric() == True:
+        if int(nascimento) > ano:
+            print(error('Inválido. Ano não pode ser maior que o atual.'))
+        elif len(nascimento) == 4 and nascimento.isnumeric() == True:
             nascimento = int(nascimento)
             dados['nascimento'] = nascimento
             dados['idade'] = ano - nascimento
             break
-        print(error('Inválido. Ano deve ser completo, ex: 1990.'))
+        else:
+            print(error('Inválido. Ano deve ser completo, ex: 1990.'))
     while True:
         sexo = input('Sexo[M/F]: ').strip().upper()[0]
         if sexo in 'MF':
@@ -119,4 +122,6 @@ while True:
         print(error('Inválido. Digite S para Sim e N para Não.'))
     if continuar == 'N':
         break
-print(cadastro)
+print(f'{"No.":>5} {"Nome":20} {"Nasc.":7} {"Idade":6} {"Sexo":6} {"Salário":15} {"FGTS":15} {"INSS":15} {"IRRF":15}')
+for pos, valor in enumerate(cadastro):
+    print(f'{pos:>5} {valor["nome"]:20} {valor["nascimento"]:<7} {valor["idade"]:<6} {valor["sexo"]:<6} R${valor["salario"]:<15.2f} R${valor["fgts"]:<15.2f} R${valor["inss"]:<15.2f} R${valor["irrf"]:<15.2f}')
