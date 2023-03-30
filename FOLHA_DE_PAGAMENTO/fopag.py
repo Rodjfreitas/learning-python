@@ -2,6 +2,7 @@ from datetime import datetime
 
 ano = datetime.now().year
 
+
 def titulo(msg):
     print('~' * 15)
     print(f'{msg:^15}')
@@ -65,19 +66,16 @@ def calcIRRF(sal):
     return irrf
 
 
-
-
-
 cadastro = []
 dados = {}
 while True:
-    titulo('Cadastro')    
+    titulo('Cadastro')
     while True:
         nome = input('Nome Completo: ').strip().title()
         if nome.count(' ') > 0:
             dados['nome'] = nome
             break
-        print(error('Inválido'))
+        print(error('Inválido: Nome completo por favor.'))
     while True:
         nascimento = input('Ano de Nascimento: ')
         if len(nascimento) == 4 and nascimento.isnumeric() == True:
@@ -85,20 +83,20 @@ while True:
             dados['nascimento'] = nascimento
             dados['idade'] = ano - nascimento
             break
-        print(error('Inválido'))
+        print(error('Inválido. Ano deve ser completo, ex: 1990.'))
     while True:
-        sexo = input('Sexo[M/F]: ').strip().upper()
+        sexo = input('Sexo[M/F]: ').strip().upper()[0]
         if sexo in 'MF':
             dados['sexo'] = sexo
             break
-        print(error('Inválido'))
+        print(error('Inválido. Digite M para Masculino, F para Feminino'))
     while True:
         salario = input('Salário: ')
         if salario.isnumeric() == True:
             salario = float(salario)
             dados['salario'] = salario
             break
-        print(error('Inválido'))
+        print(error('Inválido. Aceito apenas valor numérico.'))
     while True:
         vt = input('Possui  vale Transporte? [S/N]').strip().upper()
         if vt in 'SN':
@@ -106,7 +104,7 @@ while True:
                 vtValor = float(input('Qual valor da passagem? '))
                 dados['vt'] = calcVt(vtValor, salario)
             break
-        print(error('Inválido'))
+        print(error('Inválido. Digite S para Sim e N para Não.'))
     dados['fgts'] = calcFgts(salario)
     dados['inss'] = calcINSS(salario)
     baseIRRF = dados['salario'] - dados['inss']
@@ -118,7 +116,7 @@ while True:
         continuar = input('Realizar novo cadastro?[S/N]').strip().upper()
         if continuar in 'SN':
             break
-        print(error('Inválido'))
+        print(error('Inválido. Digite S para Sim e N para Não.'))
     if continuar == 'N':
         break
 print(cadastro)
