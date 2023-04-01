@@ -3,7 +3,9 @@ import moeda
 numero = float(input('Digite um valor:R$ '))
 reajuste = float(input('Quantos porcento deseja reajustar: '))
 aumento = moeda.aumentar(numero, reajuste)
-print(f'O valor de R${numero:.2f} reajustado à {reajuste}% será de R${aumento:.2f}')
-print(f'Se fosse para diminuir, o valor de reajuste seria R${moeda.diminuir(numero, reajuste):.2f}')
-print(f'A metade de {numero:.0f} é igual à {moeda.metade(numero):.0f}')
-print(f'O dobro de {numero:.0f} é igual à {moeda.dobro(numero):.0f}')
+print(
+    f'Aumentando o valor de {numero} reajustado à {reajuste}% será de {aumento}')
+print(
+    f'Diminuindo o valor de {numero} reajustado à {reajuste}% será de {moeda.diminuir(numero, reajuste)}')
+print(f'A metade de {numero} é igual à {moeda.metade(numero)}')
+print(f'O dobro de {numero} é igual à {moeda.dobro(numero)}')

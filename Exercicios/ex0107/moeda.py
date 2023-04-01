@@ -14,7 +14,7 @@ def diminuir(n, d):
     :param n: valor original
     :param d: valor da porcentagem que deseja reajustar. ex 10 para 10% , 5 para 5%.
     :return: retorna o valor de um reajuste desejado em porcentagem
-    """ 
+    """
     return n - (n * (d / 100))
 
 
@@ -24,3 +24,7 @@ def dobro(n):
 
 def metade(n):
     return n / 2
+
+
+def moeda(n):
+    return f'R$ {n:.2f}'
