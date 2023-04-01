@@ -4,9 +4,9 @@ ano = datetime.now().year
 
 
 def titulo(msg):
-    print('~' * 15)
-    print(f'{msg:^15}')
-    print('~' * 15)
+    print('~' * 30)
+    print(f'{msg:^30}')
+    print('~' * 30)
 
 
 def error(msg):
@@ -23,8 +23,7 @@ def calcVt(val, sal):
     cont = sal * 0.06
     if mensal < cont:
         return mensal
-    else:
-        return cont
+    return cont
 
 
 def calcINSS(sal):
@@ -76,6 +75,7 @@ while True:
             dados['nome'] = nome
             break
         print(error('Inválido: Nome completo por favor.'))
+
     while True:
         nascimento = input('Ano de Nascimento: ')
         if int(nascimento) > ano:
@@ -87,41 +87,55 @@ while True:
             break
         else:
             print(error('Inválido. Ano deve ser completo, ex: 1990.'))
+
     while True:
         sexo = input('Sexo[M/F]: ').strip().upper()[0]
         if sexo in 'MF':
             dados['sexo'] = sexo
             break
         print(error('Inválido. Digite M para Masculino, F para Feminino'))
+
     while True:
-        salario = input('Salário: ')
+        salario = input('Salário Bruto: ')
         if salario.isnumeric() == True:
             salario = float(salario)
             dados['salario'] = salario
             break
         print(error('Inválido. Aceito apenas valor numérico.'))
+
     while True:
-        vt = input('Possui  vale Transporte? [S/N]').strip().upper()
+        vt = input('Possui  vale Transporte? [S/N]: ').strip().upper()
         if vt in 'SN':
             if vt == 'S':
                 vtValor = float(input('Qual valor da passagem? '))
                 dados['vt'] = calcVt(vtValor, salario)
+            else:
+                dados['vt'] = 0.00
             break
         print(error('Inválido. Digite S para Sim e N para Não.'))
+
     dados['fgts'] = calcFgts(salario)
     dados['inss'] = calcINSS(salario)
     baseIRRF = dados['salario'] - dados['inss']
     dados['irrf'] = calcIRRF(baseIRRF)
+    dados['saLiq'] = dados['salario'] - \
+        dados['inss'] - dados['irrf'] - dados['vt']
+
     cadastro.append(dados.copy())
     dados.clear()
     print('\n')
+
     while True:
-        continuar = input('Realizar novo cadastro?[S/N]').strip().upper()
+        continuar = input('Realizar novo cadastro?[S/N]: ').strip().upper()
         if continuar in 'SN':
             break
         print(error('Inválido. Digite S para Sim e N para Não.'))
     if continuar == 'N':
         break
-print(f'{"No.":>5} {"Nome":20} {"Nasc.":7} {"Idade":6} {"Sexo":6} {"Salário":15} {"FGTS":15} {"INSS":15} {"IRRF":15}')
+titulo('Resumo de Folha')
+
+print(f'{"No.":<4}{"Nome":20}{"Nasc.":6}{"Idade":8}{"Sexo":6}{"Salário Bruto":15}{"VT":12}{"FGTS":12}{"INSS":12}{"IRRF":12}{"Salário Líquido":15}')
+
 for pos, valor in enumerate(cadastro):
-    print(f'{pos:>5} {valor["nome"]:20} {valor["nascimento"]:<7} {valor["idade"]:<6} {valor["sexo"]:<6} R${valor["salario"]:<15.2f} R${valor["fgts"]:<15.2f} R${valor["inss"]:<15.2f} R${valor["irrf"]:<15.2f}')
+    print(f'{pos:<4}{valor["nome"]:20}{valor["nascimento"]:<6}{valor["idade"]:<8}{valor["sexo"]:<6}R${valor["salario"]:<13.2f}R${valor["vt"]:<10.2f}R${valor["fgts"]:<10.2f}R${valor["inss"]:<10.2f}R${valor["irrf"]:<10.2f}= R${valor["saLiq"]:<11.2f}')
+print('\n')
