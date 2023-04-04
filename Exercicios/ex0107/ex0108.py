@@ -1,4 +1,5 @@
 import moeda
+# adapte o código do ex 107 criando uma função chamada moeda() que consiga mostrar os valores como um valor monetário formatado
 numero = float(input('Digite um valor:R$ '))
 reajuste = float(input('Quantos porcento deseja reajustar: '))
 aumento = moeda.aumentar(numero, reajuste)

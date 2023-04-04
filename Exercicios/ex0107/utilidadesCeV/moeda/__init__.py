@@ -7,8 +7,7 @@ def aumentar(n, a, formatar=False):
     """
     if formatar:
         return moeda(n + (n * (a / 100)))
-    res = n + (n * (a / 100))
-    return res
+    return n + (n * (a / 100))
 
 
 def diminuir(n, d, formatar=False):
@@ -18,24 +17,21 @@ def diminuir(n, d, formatar=False):
     :param d: valor da porcentagem que deseja reajustar. ex 10 para 10% , 5 para 5%.
     :return: retorna o valor de um reajuste desejado em porcentagem
     """
-    res = n - (n * (d / 100))
     if formatar:
-        return moeda(res)
-    return res
+        return moeda(n - (n * (d / 100)))
+    return n - (n * (d / 100))
 
 
 def dobro(n, formatar=False):
-    res = n * 2
     if formatar:
-        return moeda(res)
-    return res
+        return moeda(n * 2)
+    return n * 2
 
 
 def metade(n, formatar=False):
-    res = n / 2
     if formatar:
-        return moeda(res)
-    return res
+        return moeda(n / 2)
+    return n / 2
 
 
 def moeda(n):
