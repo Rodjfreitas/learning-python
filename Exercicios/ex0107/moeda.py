@@ -39,7 +39,7 @@ def metade(n, formatar=False):
 
 
 def moeda(n):
-    return f'R${n:.2f}'
+    return f'R${n:.2f}'.replace('.', ',')
 
 
 def resumo(n, a, d):
