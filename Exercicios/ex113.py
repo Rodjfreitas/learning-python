@@ -5,10 +5,14 @@ def leiaInt(msg):
         try:
             valor = int(input(msg))
             return valor
-        except (ValueError, TypeError, KeyboardInterrupt):
-            print('\033[1;31mErro! por favor Digite um valor inteiro válido:\033[m')
+        except (ValueError, TypeError):
+            print(
+                '\033[1;31mErro! por favor Digite um valor inteiro válido:\033[m')
             continue
-    
+        except (KeyboardInterrupt):
+            print('Usuário preferiu não digitar o valor.')
+            valor = 0
+            break
 
 
 def leiaFloat(msg):
@@ -19,7 +23,10 @@ def leiaFloat(msg):
         except (ValueError, TypeError):
             print('\033[1;31mErro, por favor Digite um número real válido.\033[m')
             continue
-
+        except (KeyboardInterrupt):
+            print('Usuário preferiu não digitar o valor.')
+            valor = 0
+            break
 
 
 inteiro = leiaInt('Digite um número inteiro: ')
