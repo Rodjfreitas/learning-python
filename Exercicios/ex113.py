@@ -4,29 +4,27 @@ def leiaInt(msg):
     while True:
         try:
             valor = int(input(msg))
-            return valor
         except (ValueError, TypeError):
             print(
                 '\033[1;31mErro! por favor Digite um valor inteiro válido:\033[m')
             continue
         except (KeyboardInterrupt):
-            print('Usuário preferiu não digitar o valor.')
+            print('\033[1;31mUsuário preferiu não digitar o valor.\033[m')
             valor = 0
-            break
+        return valor
 
 
 def leiaFloat(msg):
     while True:
         try:
             valor = float(input(msg))
-            return valor
         except (ValueError, TypeError):
             print('\033[1;31mErro, por favor Digite um número real válido.\033[m')
             continue
         except (KeyboardInterrupt):
-            print('Usuário preferiu não digitar o valor.')
+            print('\033[1;31mUsuário preferiu não digitar o valor.\033[m')
             valor = 0
-            break
+        return valor
 
 
 inteiro = leiaInt('Digite um número inteiro: ')
